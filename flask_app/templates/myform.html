@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+            Data Entry
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body >
+        <center>
+        <div class="mx-auto" style="width: 200px;">
+            
+                <p class="h2">Salary Predictor</p>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                Age: <input type="number" class="form-control" id="age" name="age" placeholder="Enter age">
+                
+                Working Class: 
+                <select class="form-control" name="working_class">
+                    {%for i in range(0, length_working_class)%}
+                            <option>{{working_class[i]}}</option>
+                        {%endfor%}
+                </select>
+                Education:
+                <select class="form-control" name="education">
+                    {%for i in range(0, length_education)%}
+                            <option>{{education[i]}}</option>
+                        {%endfor%}
+                </select>
+                
+                Sex:
+                <select class="form-control" name="sex">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+                Occupation:
+                <select class="form-control" name="occupation">
+                    {%for i in range(0, length_occupation)%}
+                            <option>{{occupation[i]}}</option>
+                        {%endfor%}
+                </select>
+                Education years:
+                <select class="form-control" name="education_num">
+                    {%for i in range(0, length_education_num)%}
+                            <option>{{education_num[i]}}</option>
+                        {%endfor%}
+                </select>
+                Marital:
+                    <select class="form-control" name="marital">
+                        {%for i in range(0, length_marital)%}
+                            <option>{{marital[i]}}</option>
+                        {%endfor%}
+                        </select>
+                Capital Gain:
+                <input type="number" class="form-control" name="capital_gain" placeholder=0/>
+                Capital Loss:
+                <input type="number" class="form-control" name="capital_loss" placeholder=0/>
+                Hours Per Week:
+                <input type="number" class="form-control" name="hours" placeholder=40/>
+                Fnlwgt:
+                <input type="number" class="form-control" name="fnlwgt" placeholder=40/>
+
+                <input type="submit" class="btn btn-primary">
+          </form>
+        </center>
+        </div>
+    </body>
+</html>
